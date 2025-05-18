@@ -27,21 +27,35 @@ export default function TabLayout() {
         }),
       }}
     >
+
       <Tabs.Screen
-        name="index"
+        name="profile"
         options={{
-          title: 'Home',
+          title: 'Профіль',
           tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="house.fill" color={color} />
+            <IconSymbol size={28} name="paperplane.fill" color={color} />
           ),
         }}
       />
+
       <Tabs.Screen
-        name="explore"
+        name="categories"
         options={{
-          title: 'Explore',
+          title: 'Категорії',
           tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="paperplane.fill" color={color} />
+            //@ts-ignore
+            <IconSymbol size={28} name="category.fill" color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="create"
+        options={{
+          title: 'Додати',
+          tabBarIcon: ({ color }) => (
+            //@ts-ignore
+            <IconSymbol size={28} name="category.add" color={color} />
           ),
         }}
       />

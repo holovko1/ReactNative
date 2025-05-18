@@ -73,13 +73,15 @@ public class AccountController(UserManager<UserEntity> userManager,
         return Ok(new { token });
     }
 
-    [Authorize, HttpGet]
+    [Authorize]
+    [HttpGet]
     public async Task<IActionResult> Profile()
     {
         try
         {
-            string name = User.Claims.FirstOrDefault().Value;
-            var user = await userManager.FindByNameAsync(name);
+            //Thread.Sleep(2000);
+            string userName = User.Claims.FirstOrDefault().Value;
+            var user = await userManager.FindByNameAsync(userName);
             var model = mapper.Map<ProfileViewModel>(user);
 
             return Ok(model);
